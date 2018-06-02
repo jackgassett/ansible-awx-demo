@@ -1,0 +1,4 @@
+FROM ansible/awx_web:latest
+COPY ansible_inventory /etc/ansible/hosts
+COPY setup_ansible /root/setup_ansible
+WORKDIR /root

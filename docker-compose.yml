@@ -17,7 +17,11 @@ services:
 
   awx_web:
     # image: "geerlingguy/awx_web:latest"
-    image: "ansible/awx_web:latest"
+    build: 
+        context: .
+        dockerfile: Dockerfile.awx
+    image: "ansible_awx"     
+    #image: "ansible/awx_web:latest"
     links:
       - rabbitmq
       - memcached
@@ -67,10 +71,19 @@ services:
       MEMCACHED_PORT: 11211
       
   atpm1:
-    image: "ansible_client"
+    build: 
+        context: .
+        dockerfile: Dockerfile.ansible_client
+    image: "atpm"
     
   atpm2:
-    image: "ansible_client"
+    build: 
+        context: .
+        dockerfile: Dockerfile.ansible_client
+    image: "atpm"
 
   atpm3:
-    image: "ansible_client"    
+    build: 
+        context: .
+        dockerfile: Dockerfile.ansible_client
+    image: "atpm"   
