@@ -3,7 +3,7 @@
   tasks:
   - name: make directory
     file:
-      path: "/root/<username>/.ssh"
+      path: "/root/.ssh"
       state: directory
   - name: create empty file
     file:
