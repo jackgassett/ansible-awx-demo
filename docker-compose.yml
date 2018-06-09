@@ -6,8 +6,8 @@ services:
         context: .
         dockerfile: Dockerfile.ansible_server
     image: "ansible-server"
-    volumes: 
-      - ansible-playbooks:/playbooks
+    #volumes: 
+    #  - ansible-playbooks:/playbooks
       
   atpm1:
     build: 
@@ -27,8 +27,8 @@ services:
         dockerfile: Dockerfile.ansible_client
     image: "atpm"   
 
-volumes:
-  ansible-playbooks:
-    driver_opts:
-      device: "/c/development/ansible-awx/ansible-playbooks"
-      o: "bind"      
+#volumes:
+#  ansible-playbooks:
+#    driver_opts:
+#      device: "/c/development/ansible-awx/ansible-playbooks"
+#      o: "bind"      
